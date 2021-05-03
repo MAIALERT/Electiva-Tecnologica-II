@@ -3,7 +3,7 @@
         <div class="row py-4">
             <div class="col-md-8 py-1">
                 <div class="card">
-                    <h2 class="m-b-2 card-header ">Registro de Rol de Usuario</h2>
+                    <h2 class="m-b-2 card-header ">Registro de Producto</h2>
                     <form action="#" class="py-5 card-body " method="post">
                         <div class="form-group row">
                             <label for="nombre" class="col-lg-2 col-form-label">Nombre</label>
@@ -12,7 +12,7 @@
                                     placeholder="Nombre" data-toggle="tooltip" data-placement="top"
                                     title="Ingrese el Rol">
                             </div>
-                            <label for="descripcion" class="col-lg-2 col-form-label">Descripción</label>
+                            <label for="descripcion" class="col-lg-2 col-form-label">Precio</label>
                             <div class="col-lg-4">
                                 <input class=" form-control" type="text" value="" id="descripcion" name="descripcion"
                                     placeholder="Descripción" data-toggle="tooltip" data-placement="top"
@@ -42,7 +42,7 @@
                 <thead>
                     <tr>
                         <th>N°</th>
-                        <th>Rol</th>
+                        <th>Nombre Producto</th>
                         <th>Descripción</th>
                         <th>#</th>
                     </tr>
@@ -90,9 +90,9 @@
                                                     <label for="descripcion" class="col-form-label">Descripción</label>
                                                     <div class="col-lg-4">
                                                         <input class=" form-control" type="text" value="{{descripcion}}"
-                                                            id="descripcion" name="descripcion" placeholder="Modificar descripción"
-                                                            data-toggle="tooltip" data-placement="top"
-                                                            title="Modificar la Descripción">
+                                                            id="descripcion" name="descripcion"
+                                                            placeholder="Modificar descripción" data-toggle="tooltip"
+                                                            data-placement="top" title="Modificar la Descripción">
                                                     </div>
                                                 </div>
                                             </div>
@@ -111,6 +111,34 @@
                         </td>
                     </tr>
                     {{/each}}
+                    
+                    <!-- Imprimiendo pproductos -->
+                    
+                    <table class="card-body table table-responsive table-striped py-4">
+                        <h2>Producto mas Vendido</h2>
+                        <thead>
+                            <tr>
+                                <th>N°</th>
+                                <th>codigo</th>
+                                <th>Usuario</th>
+                                <th>Producto</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each pedido}}
+                            <tr>
+                                <th scope="row">{{id}}</th>
+                                <td>{{codidoPedido}}</td>
+                                <td>{{idUsuario}}</td>
+                                <td>{{isProducto}}</td>    
+                                <td>{{cantidadProducto}}</td>                            
+
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+
+
                 </tbody>
             </table>
         </div>

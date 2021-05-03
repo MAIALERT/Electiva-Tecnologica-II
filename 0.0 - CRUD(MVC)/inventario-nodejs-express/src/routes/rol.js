@@ -12,6 +12,16 @@ router.get('/agregar', async (req, res) => {
     });
 });
 
+//Mostrar producto mas vendido.
+router.get('/agregar', async (req, res) => {
+
+    const pedido = await pool.query('SELECT *  FROM pedido WHERE idProducto = 32');
+
+    res.render('usuario/frmRol', {
+        cantidadP
+    });
+});
+
 //Insertar Nuevo Rol
 router.post('/agregar', async (req, res) => {
     //res.send('oh yeah');
